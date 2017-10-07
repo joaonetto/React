@@ -19,3 +19,9 @@ VOLUME /var/www/html
 
 # Expose Port
 EXPOSE 80
+
+# Change WorkDir
+WORKDIR /var/www/html
+
+# Run Live-Server
+CMD live-server --port=80 public
