@@ -14,6 +14,9 @@ RUN npm install -g yarn
 # Install Live-Server
 RUN yarn global add live-server
 
+# Install Babel
+RUN yarn global add babel-cli@6.26.0
+
 # Create a Volume
 VOLUME /var/www/html
 
