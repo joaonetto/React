@@ -8,6 +8,9 @@ RUN apt-get install -y curl sudo
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
+# Install Yarn
+RUN npm install -g yarn
+
 # Install Live-Server
 RUN yarn global add live-server
 
