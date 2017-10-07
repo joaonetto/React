@@ -2,57 +2,57 @@
 
 console.log('App.hs is running.');
 
-//JSX - JavaScript XML
+var app = {
+  title: 'Indecision App',
+  subtitle: 'Do something !!'
+};
+
 var template = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'Indecision App.'
+    app.title
   ),
   React.createElement(
     'p',
     null,
-    'This is come info'
-  ),
-  React.createElement(
-    'ol',
-    null,
-    React.createElement(
-      'li',
-      null,
-      'Item One: '
-    ),
-    React.createElement(
-      'li',
-      null,
-      'Item One: '
-    )
+    app.subtitle
   )
 );
 
-// Create a templateTwo var JSX expression
-var templateTwo = React.createElement(
+var user = {
+  name: 'JNetto',
+  age: 44,
+  location: 'Campinas / São Paulo / Brasil'
+  // var userName = 'JNetto';
+  // var userAge = 44;
+  // var userLocation = 'Campinas / São Paulo / Brasil'
+  // Create a templateTwo var JSX expression
+};var templateTwo = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'Jo\xE3o Netto'
+    user.name
   ),
   React.createElement(
     'p',
     null,
-    'Age: 44'
+    'Age: ',
+    user.age
   ),
   React.createElement(
     'p',
     null,
-    'Location: CPS/SP/BR'
+    'Location: ',
+    user.location
   )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
+//ReactDOM.render(templateTwo, appRoot);

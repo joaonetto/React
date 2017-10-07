@@ -1,27 +1,36 @@
 console.log('App.hs is running.');
 
-//JSX - JavaScript XML
+var app = {
+  title: 'Indecision App',
+  subtitle: 'Do something !!'
+}
+
 var template = (
   <div>
-    <h1>Indecision App.</h1>
-    <p>This is come info</p>
-    <ol>
-      <li>Item One: </li>
-      <li>Item One: </li>
-    </ol>
+    <h1>{app.title}</h1>
+    <p>{app.subtitle}</p>
   </div>
 );
 
+var user = {
+  name: 'JNetto',
+  age: 44,
+  location: 'Campinas / São Paulo / Brasil'
+}
+// var userName = 'JNetto';
+// var userAge = 44;
+// var userLocation = 'Campinas / São Paulo / Brasil'
 // Create a templateTwo var JSX expression
 var templateTwo = (
   <div>
-    <h1>João Netto</h1>
-    <p>Age: 44</p>
-    <p>Location: CPS/SP/BR</p>
+    <h1>{user.name}</h1>
+    <p>Age: {user.age}</p>
+    <p>Location: {user.location}</p>
   </div>
 );
 
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
+//ReactDOM.render(templateTwo, appRoot);
