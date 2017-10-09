@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('App.hs is running.');
+console.log('App.js is running.');
 
 var app = {
   title: 'Indecision App',
@@ -22,15 +22,30 @@ var template = React.createElement(
   )
 );
 
-var user = {
+/*var user = {
   name: 'JNetto',
   age: 44,
   location: 'Campinas / São Paulo / Brasil'
+}*/
+
+var user = {
+  name: 'JNetto',
+  age: 44
+
   // var userName = 'JNetto';
   // var userAge = 44;
   // var userLocation = 'Campinas / São Paulo / Brasil'
   // Create a templateTwo var JSX expression
-};var templateTwo = React.createElement(
+
+};function getLocation(location) {
+  if (location) {
+    return location;
+  } else {
+    return 'Unknown';
+  }
+}
+
+var templateTwo = React.createElement(
   'div',
   null,
   React.createElement(
@@ -48,11 +63,11 @@ var user = {
     'p',
     null,
     'Location: ',
-    user.location
+    getLocation(user.location)
   )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
-//ReactDOM.render(templateTwo, appRoot);
+//ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
