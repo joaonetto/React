@@ -4,10 +4,15 @@ console.log('App.js is running.');
 
 var app = {
   title: 'Indecision App',
-  subtitle: 'Do something !!'
-};
+  subtitle: 'Put your life in the hands of a computer !',
+  options: ['One', 'Two']
 
-var template = React.createElement(
+  /*var app = {
+    title: 'Indecision App',
+    options: ['One', 'Two']
+  }*/
+
+};var template = React.createElement(
   'div',
   null,
   React.createElement(
@@ -15,22 +20,27 @@ var template = React.createElement(
     null,
     app.title
   ),
-  React.createElement(
+  app.subtitle ? app.subtitle : React.createElement(
     'p',
     null,
     app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? 'Here are your options' : 'No Options'
   )
 );
 
-/*var user = {
+var user = {
   name: 'JNetto',
   age: 44,
   location: 'Campinas / São Paulo / Brasil'
-}*/
 
-var user = {
-  age: 10,
-  location: 'Campinas / São Paulo / Brasil'
+  /*var user = {
+    age: 10,
+    location: 'Campinas / São Paulo / Brasil'
+  }*/
 
   // var userName = 'JNetto';
   // var userAge = 44;
@@ -56,7 +66,7 @@ var templateTwo = React.createElement(
     null,
     user.name ? user.name : 'Anonymous'
   ),
-  user.age >= 18 && React.createElement(
+  user.age && user.age >= 18 && React.createElement(
     'p',
     null,
     'Age: ',
@@ -67,5 +77,5 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-//ReactDOM.render(template, appRoot);
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
+//ReactDOM.render(templateTwo, appRoot);
